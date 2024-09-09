@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Log from "./components/Log";
+
 
 const Test2 = ()=>{
     const [txt, setTxt] = useState("")
@@ -9,7 +11,7 @@ const Test2 = ()=>{
     }
     return <div>
         <input name="text" onChange={onChangeTxt} />
-        {logs.map(str => <p>{str}</p>)}
+        {logs.map((str,i)=> <Log i={i} str={str} />)}
     </div>
 }
 
