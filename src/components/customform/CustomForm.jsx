@@ -8,7 +8,7 @@ const CustomForm = ()=>{
         console.log(data)
     }
     return (
-    <Form onSubmit={onSubmitHandler}>
+    <Form onSubmit={onSubmitHandler} warning={true}>
         <Input name="name" required/><br/>
         <Input name="age"/><br/>
         <Input type="submit" />
