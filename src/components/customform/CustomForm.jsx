@@ -8,11 +8,11 @@ const CustomForm = ()=>{
         console.log(data)
     }
     return (
-    <Form onSubmit={onSubmitHandler} warning={true}>
-        <Input name="name" required/><br/>
-        <Input name="age"/><br/>
-        <Input type="submit" />
-    </Form>
+        <Form onSubmit={onSubmitHandler} warning={true}>
+            <Input name="name" required/><br/>
+            <Input name="age"/><br/>
+            <Input type="submit" />
+        </Form>
     )
 }
 export default CustomForm;

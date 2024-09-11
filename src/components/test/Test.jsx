@@ -13,7 +13,7 @@ const Test = () =>{
     },[timer])
     useEffect(()=>{
         setLoading(true)
-        setTimeout(()=> setLoading(false), 1500)
+        setTimeout(()=> setLoading(false), 5)
         setTimer(new Date().toLocaleString());
     }, [refresh])
     if(loading) return <h1>....</h1>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const init = {name: "", age: 0};
 const Person = () => {
@@ -21,6 +22,7 @@ const Person = () => {
         setPeople(deletedPeople)
     }
     return <div>
+        
         <input 
             name="name" 
             value={person.name} 
