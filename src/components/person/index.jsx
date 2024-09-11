@@ -5,13 +5,20 @@ const Person = () => {
     const [person, setPerson] = useState({...init});
     const [people, setPeople] = useState([]);
     const [search, setSearch] = useState("");
+    const [index,setIndex] = useState(people.length);
+    const [uindex,setUIndex] = useState(people.length);
     const onChangePerson = (e) => {
         const {name, value} = e.target;
         setPerson({...person, [name]: value});
     }
     const onSubmit = () => {
         setPerson({...init})
-        setPeople([...people, {...person}])
+        setPeople([...people, {id: index,...person}])
+        setIndex(index+1)
+    }
+    const onDelete = (tId)=>{
+        const deletedPeople = people.filter(({id})=> tId!==id);
+        setPeople(deletedPeople)
     }
     return <div>
         <input 
@@ -26,10 +33,13 @@ const Person = () => {
             <thead>
                 <th>name</th>
                 <th>age</th>
+                <th>수정</th>
+                <th>삭제</th>
             </thead>
             {people
                 .filter(({name})=> name.includes(search))
-                .map(({name, age})=> <tr><td>{name}</td><td>{age}</td></tr>)}
+                .map(({name, age, id})=> <tr><td>{name}</td><td>{age}</td><td><button>수정</button></td>
+                <td><button onClick={()=> onDelete(id)}>삭제</button></td></tr>)}
         </table>
     </div>
 }
